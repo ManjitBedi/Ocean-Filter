@@ -30,11 +30,25 @@ public class MainMenu : MonoBehaviour
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
-        //  Get references to the buttons in the menu document.
-        Button loadScene1Button = root.Q<Button>("ButtonLoadScene1");
-        Button loadScene2Button = root.Q<Button>("ButtonLoadScene2");
+        VisualElement container1 = root.Q<VisualElement>("container-particles");
+        VisualElement container2 = root.Q<VisualElement>("container-face");
 
-        loadScene1Button.clicked += () => SceneManager.LoadScene("Robot Face Filter");
-        loadScene2Button.clicked += () => SceneManager.LoadScene("Ice Cream Face Filter");
+
+        //  Get references to the buttons in the menu document.
+        Button particleFX1Button = container1.Q<Button>("FX1");
+        Button particleFX2Button = container1.Q<Button>("FX2");
+        Button particleFX3Button = container1.Q<Button>("FX3");
+
+        Button visorButton = container2.Q<Button>("visor");
+        Button ovalButton = container2.Q<Button>("oval");
+        Button noneButton = container2.Q<Button>("none");
+
+        particleFX1Button.clicked += () => Debug.Log("FX 1");
+        particleFX2Button.clicked += () => Debug.Log("FX 2");
+        particleFX3Button.clicked += () => Debug.Log("FX 3");
+
+        visorButton.clicked += () => Debug.Log("visor");
+        ovalButton.clicked += () => Debug.Log("oval");
+        noneButton.clicked += () => Debug.Log("none");
     }
 }
