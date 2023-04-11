@@ -12,5 +12,7 @@
         <ui:Button text="Oval" display-tooltip-when-elided="true" name="oval" />
         <ui:Button text="None" display-tooltip-when-elided="true" name="none" />
     </ui:VisualElement>
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-self: center; height: 20px;" />
+    <ui:VisualElement name="container-bottom" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end; height: 20px; justify-content: flex-end;">
+        <ui:Button text="reset" display-tooltip-when-elided="true" name="reset" />
+    </ui:VisualElement>
 </ui:UXML>
