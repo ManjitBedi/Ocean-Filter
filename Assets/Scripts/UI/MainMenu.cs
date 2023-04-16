@@ -9,9 +9,8 @@ using UnityEngine.UIElements;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-    GameObject faceMask;
-    GameObject visorGameObject;
-    GameObject ovalGameObject;
+    [SerializeField]
+    AppState appState;
 
     private void OnEnable()
     {
@@ -20,37 +19,13 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        FindGameObjects();
         ConfigureUI();
     }
 
-    private void FindGameObjects()
-    {
-        Debug.Log("find game objects");
-        visorGameObject = GameObject.Find("visor");
-        ovalGameObject = GameObject.Find("ovals");
-
-        if (visorGameObject != null)
-        {
-            Debug.Log("visor game object configured");
-            visorGameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("visor game object not found");
-        }
-
-        if (ovalGameObject != null)
-        {
-            Debug.Log("oval game object configured");
-            ovalGameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("oval game object not found");
-        }
-    }
-
+    /// <summary>
+    /// Configure the buttons with actions to change the 3D objects in thes scene
+    /// and select a particle effect using the visual effects graph.
+    /// </summary>
     private void ConfigureUI()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -75,24 +50,19 @@ public class MainMenu : MonoBehaviour
         visorButton.clicked += () =>
         {
             Debug.Log("display visor game object");
-            visorGameObject?.SetActive(true);
-            ovalGameObject?.SetActive(false);
+            appState.FaceAccessoryIndex = 1;
         };
 
         ovalButton.clicked += () =>
         {
             Debug.Log("display oval game object");
-            visorGameObject?.SetActive(false);
-            ovalGameObject?.SetActive(true);
+            appState.FaceAccessoryIndex = 2;
         };
 
         noneButton.clicked += () =>
         {
             Debug.Log("display 'no' game object");
-            visorGameObject?.SetActive(false);
-            ovalGameObject?.SetActive(false);
+            appState.FaceAccessoryIndex = 0;
         };
-
-        resetButton.clicked += () => FindGameObjects();
     }
 }

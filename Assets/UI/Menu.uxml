@@ -13,6 +13,6 @@
         <ui:Button text="None" display-tooltip-when-elided="true" name="none" />
     </ui:VisualElement>
     <ui:VisualElement name="container-bottom" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end; height: 20px; justify-content: flex-end;">
-        <ui:Button text="reset" display-tooltip-when-elided="true" name="reset" />
+        <ui:Button text="reset" display-tooltip-when-elided="true" name="reset" style="height: 14px;" />
     </ui:VisualElement>
 </ui:UXML>
