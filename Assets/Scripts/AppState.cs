@@ -6,12 +6,21 @@ using UnityEngine.XR.ARFoundation;
 
 public class AppState : MonoBehaviour
 {
+	[SerializeField]
+	GameObject visualEffect1;
 
-	/// <summary>
-	/// Set to 0 to not display any accessories on the face mesh.
-	/// </summary>
-	///
-	private int _faceAccessoryIndex = 1;
+    [SerializeField]
+    GameObject visualEffect2;
+
+    [SerializeField]
+    GameObject visualEffect3;
+
+
+    /// <summary>
+    /// Set to 0 to not display any accessories on the face mesh.
+    /// </summary>
+    ///
+    private int _faceAccessoryIndex = 1;
 
     /// <summary>
 	/// Display an accessory over the face mesh.
@@ -120,7 +129,30 @@ public class AppState : MonoBehaviour
 				ovalsGameObject.SetActive(false);
 				break;
         }
+    }
 
+    public void SelectVisualEffect(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                visualEffect1.SetActive(true);
+                visualEffect2.SetActive(false);
+                visualEffect3.SetActive(false);
+                break;
+
+            case 1:
+                visualEffect1.SetActive(false);
+                visualEffect2.SetActive(true);
+                visualEffect3.SetActive(false);
+                break;
+
+            case 2:
+                visualEffect1.SetActive(false);
+                visualEffect2.SetActive(false);
+                visualEffect3.SetActive(true);
+                break;
+        }
     }
 }
 
