@@ -11,3 +11,8 @@ Example project following tutorial on [Unity Learn](https://learn.unity.com/proj
 
 ## Screengrabs
 
+![image](https://user-images.githubusercontent.com/2837803/232259438-bbea07b6-fd69-475f-bd80-aee902cb891b.png)
+- working on a effects graph
+
+![image](https://user-images.githubusercontent.com/2837803/232259453-e0a9bc77-c96b-4725-9caa-0345cba11dda.png)
+- menu UXML
