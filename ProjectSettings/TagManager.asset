@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - star
-  - cat
-  - monocle
+  - face
+  - ovals
+  - visor
   layers:
   - Default
   - TransparentFX
