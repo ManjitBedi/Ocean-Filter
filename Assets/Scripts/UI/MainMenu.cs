@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        // TODO: change the code to configure after the prefab for the face mesh has been loaded
+        // Using an event?
         FindGameObjects();
         ConfigureUI();
     }
@@ -51,6 +53,10 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Configure the buttons with actions to change the 3D objects in thes scene
+    /// and select a particle effect using the visual effects graph.
+    /// </summary>
     private void ConfigureUI()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -93,6 +99,7 @@ public class MainMenu : MonoBehaviour
             ovalGameObject?.SetActive(false);
         };
 
+        // This is a hack to get be able to maniuplate the game objects when the scene is running.
         resetButton.clicked += () => FindGameObjects();
     }
 }
