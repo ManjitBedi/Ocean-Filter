@@ -13,7 +13,15 @@ public class AppState : MonoBehaviour
 	///
 	private int _faceAccessoryIndex = 1;
 
-	public int FaceAccessoryIndex
+    /// <summary>
+	/// Display an accessory over the face mesh.
+    /// <list type="list">
+    ///	<item> 0 - none</item>
+    ///	<item> 1 - visor</item>
+    ///	<item> 2 - ovals</item>
+    /// </list>
+    /// </summary>
+    public int FaceAccessoryIndex
 	{
 		get => _faceAccessoryIndex;
 		set
