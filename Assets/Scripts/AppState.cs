@@ -6,12 +6,21 @@ using UnityEngine.XR.ARFoundation;
 
 public class AppState : MonoBehaviour
 {
+	[SerializeField]
+	GameObject visualEffect1;
 
-	/// <summary>
-	/// Set to 0 to not display any accessories on the face mesh.
-	/// </summary>
-	///
-	private int _faceAccessoryIndex = 1;
+    [SerializeField]
+    GameObject visualEffect2;
+
+    [SerializeField]
+    GameObject visualEffect3;
+
+
+    /// <summary>
+    /// Set to 0 to not display any accessories on the face mesh.
+    /// </summary>
+    ///
+    private int _faceAccessoryIndex = 1;
 
     /// <summary>
 	/// Display an accessory over the face mesh.
@@ -78,9 +87,21 @@ public class AppState : MonoBehaviour
 	{
 		if (faceMeshGameObject == null)
 		{
+			Debug.Log("get references to game objects on the AR Face");
             faceMeshGameObject = arFace.gameObject;
 			visorGameObject = GameObject.FindGameObjectWithTag("visor");
             ovalsGameObject = GameObject.FindGameObjectWithTag("ovals");
+
+			Debug.Log($"game objects {(faceMeshGameObject != null ? 1 : 0)}, {(visorGameObject != null ? 1 : 0)}, {(ovalsGameObject != null ? 1 : 0)}");
+			if (faceMeshGameObject != null)
+			{
+                Debug.Log($"number of child objects on AR game object {arFace.transform.childCount}");
+                Transform[] allChildren = faceMeshGameObject.GetComponentsInChildren<Transform>();
+                foreach(Transform t in allChildren)
+				{
+					Debug.Log($"child game object {t.gameObject.name}, tag {t.gameObject.tag}");
+				}
+            }
         }
 
         SettingsChanged();
@@ -108,7 +129,30 @@ public class AppState : MonoBehaviour
 				ovalsGameObject.SetActive(false);
 				break;
         }
+    }
 
+    public void SelectVisualEffect(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                visualEffect1.SetActive(true);
+                visualEffect2.SetActive(false);
+                visualEffect3.SetActive(false);
+                break;
+
+            case 1:
+                visualEffect1.SetActive(false);
+                visualEffect2.SetActive(true);
+                visualEffect3.SetActive(false);
+                break;
+
+            case 2:
+                visualEffect1.SetActive(false);
+                visualEffect2.SetActive(false);
+                visualEffect3.SetActive(true);
+                break;
+        }
     }
 }
 

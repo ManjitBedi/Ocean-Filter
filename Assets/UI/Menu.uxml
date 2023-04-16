@@ -1,18 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Menu.uss?fileID=7433441132597879392&amp;guid=d2ac8df7216cd4eb48757ce4f0525774&amp;type=3#Menu" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-self: center; height: 300px;" />
-    <ui:VisualElement name="container-particles" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; max-height: 0; justify-content: space-around; align-items: auto; align-self: flex-end; height: 40px;">
-        <ui:Button text="1" display-tooltip-when-elided="true" name="FX1" class="button" style="background-color: rgb(179, 248, 200); flex-direction: row;" />
+    <ui:VisualElement name="container-particles" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; max-height: 0; justify-content: space-around; align-items: auto; align-self: center; height: 0;">
+        <ui:Button text="1" display-tooltip-when-elided="true" name="FX1" class="button" style="background-color: rgb(179, 248, 200); flex-direction: row; justify-content: flex-start;" />
         <ui:Button text="2" display-tooltip-when-elided="true" name="FX2" class="button" style="background-color: rgb(160, 231, 228); flex-direction: row; max-width: none;" />
         <ui:Button text="3" display-tooltip-when-elided="true" name="FX3" class="button" style="background-color: rgb(160, 231, 228); flex-direction: row; max-width: none;" />
     </ui:VisualElement>
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column; align-self: center; height: 4px;" />
-    <ui:VisualElement name="container-face" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 20px; flex-direction: row; justify-content: center; align-self: flex-end; align-items: flex-end; width: 236px;">
-        <ui:Button text="Visor" display-tooltip-when-elided="true" name="visor" style="-unity-text-align: lower-left;" />
-        <ui:Button text="Oval" display-tooltip-when-elided="true" name="oval" />
-        <ui:Button text="None" display-tooltip-when-elided="true" name="none" />
+    <ui:VisualElement name="container-face" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 0; flex-direction: row; justify-content: space-around; align-self: center; align-items: auto; width: 198px;">
+        <ui:Button text="Visor" display-tooltip-when-elided="true" name="visor" style="-unity-text-align: middle-center; height: 20px; margin-top: 2px; margin-bottom: 2px; padding-top: 10px; padding-bottom: 10px; justify-content: flex-start;" />
+        <ui:Button text="Oval" display-tooltip-when-elided="true" name="oval" style="height: 20px;" />
+        <ui:Button text="None" display-tooltip-when-elided="true" name="none" style="height: 20px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="container-bottom" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end; height: 20px; justify-content: flex-end;">
-        <ui:Button text="reset" display-tooltip-when-elided="true" name="reset" style="height: 14px;" />
+    <ui:VisualElement name="container-bottom" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end; height: 0; justify-content: flex-end;">
+        <ui:Button text="reset" display-tooltip-when-elided="true" name="reset" style="height: 14px; width: 40px; margin-right: 20px;" />
     </ui:VisualElement>
 </ui:UXML>

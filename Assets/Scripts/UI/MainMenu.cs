@@ -43,9 +43,9 @@ public class MainMenu : MonoBehaviour
 
         Button resetButton = root.Q<VisualElement>("container-bottom").Q<Button>("reset");
 
-        particleFX1Button.clicked += () => Debug.Log("FX 1");
-        particleFX2Button.clicked += () => Debug.Log("FX 2");
-        particleFX3Button.clicked += () => Debug.Log("FX 3");
+        particleFX1Button.clicked += () => appState.SelectVisualEffect(0);
+        particleFX2Button.clicked += () => appState.SelectVisualEffect(1);
+        particleFX3Button.clicked += () => appState.SelectVisualEffect(2);
 
         visorButton.clicked += () =>
         {

@@ -7,6 +7,9 @@ TagManager:
   - face
   - ovals
   - visor
+  - FX1
+  - Fx2
+  - FX3
   layers:
   - Default
   - TransparentFX
