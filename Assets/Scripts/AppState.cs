@@ -78,9 +78,21 @@ public class AppState : MonoBehaviour
 	{
 		if (faceMeshGameObject == null)
 		{
+			Debug.Log("get references to game objects on the AR Face");
             faceMeshGameObject = arFace.gameObject;
 			visorGameObject = GameObject.FindGameObjectWithTag("visor");
             ovalsGameObject = GameObject.FindGameObjectWithTag("ovals");
+
+			Debug.Log($"game objects {(faceMeshGameObject != null ? 1 : 0)}, {(visorGameObject != null ? 1 : 0)}, {(ovalsGameObject != null ? 1 : 0)}");
+			if (faceMeshGameObject != null)
+			{
+                Debug.Log($"number of child objects on AR game object {arFace.transform.childCount}");
+                Transform[] allChildren = faceMeshGameObject.GetComponentsInChildren<Transform>();
+                foreach(Transform t in allChildren)
+				{
+					Debug.Log($"child game object {t.gameObject.name}, tag {t.gameObject.tag}");
+				}
+            }
         }
 
         SettingsChanged();
